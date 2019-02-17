@@ -7,7 +7,7 @@ import numpy as np
 def detect_contour():
 
   # 画像を読込
-  src = cv2.imread("C:/Python36/img/APC_0023.jpg")
+  src = cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/A_16.jpg")
 
   # グレースケール画像へ変換
   gray = cv2.cvtColor(src, cv2.COLOR_BGR2GRAY)

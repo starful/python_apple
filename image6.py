@@ -6,7 +6,7 @@ import numpy as np
 from pprint import pprint
 
 def main():
-    image = cv2.imread("C:/Python36/workspace/image/img/APC_0029.jpg")
+    image = cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/A_16.jpg")
    
     # HSV‚Ö•ÏŠ·
     image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV) 
@@ -22,7 +22,7 @@ def main():
     image   = cv2.morphologyEx(image, cv2.MORPH_CLOSE, kernel)
     
     # ‰æ‘œ‚Ì“Ç‚İ‚İ
-    img_src =  cv2.imread("C:/Python36/workspace/image/img/APC_0029.jpg", 1)
+    img_src =  cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/end.jpg", 1)
     img_maskn = cv2.bitwise_not(image)
     img_masked = cv2.bitwise_and(img_src, img_src, mask=img_maskn )
     cv2.imwrite('result.jpg', img_masked)

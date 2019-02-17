@@ -9,7 +9,7 @@ def main():
     t = 127
 
     # 入力画像の読み込み
-    img = cv2.imread("C:/Python36/img/APC_0023.jpg")
+    img = cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/A_16.jpg")
 
     # グレースケール変換
     gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
@@ -20,7 +20,7 @@ def main():
     dst = cv2.fastNlMeansDenoisingColored(th2,None,10,10,7,21)
     
     # 結果を出力
-    cv2.imwrite("C:/Python36/img/th2.jpg", th2)
+    cv2.imwrite("/Users/s-han/git/python_apple/dataset/training_set/end.jpg", th2)
 
 if __name__ == "__main__":
     main()

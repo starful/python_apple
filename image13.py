@@ -9,9 +9,9 @@ from pprint import pprint
 import shutil
 
 # Set the root directory
-rootdir = 'C:/Python36/workspace/image/jpg'
-resultdir = 'C:/Python36/workspace/image/after/'
-enddir = 'C:/Python36/workspace/image/end/'
+rootdir = '/Users/s-han/git/python_apple/dataset/training_set/A'
+resultdir = '/Users/s-han/git/python_apple/dataset/training_set/result/'
+enddir = '/Users/s-han/git/python_apple/dataset/training_set/end/'
 
 def long_slice(image_path, out_name, outdir):
 

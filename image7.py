@@ -7,7 +7,7 @@ import numpy as np
 def main():
 
     # “ü—Í‰æ‘œ‚Ì“Ç‚İ‚İ
-    img = cv2.imread("C:/Python36/img/APC_0023.jpg")
+    img = cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/cccc.jpg")
 
     if not img is None:
         imgray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY);
@@ -19,6 +19,6 @@ def main():
         
         
 
-    cv2.imwrite("C:/Python36/img/th8.jpg", img)
+    cv2.imwrite("/Users/s-han/git/python_apple/dataset/training_set/A_16_end.jpg", img)
 if __name__ == "__main__":
     main()

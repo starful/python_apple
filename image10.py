@@ -4,7 +4,7 @@ import cv2, matplotlib
 import numpy as np
 import matplotlib.pyplot as plt
 
-upstate = cv2.imread("C:/Python36/img/APC_0023.jpg")
+upstate = cv2.imread("/Users/s-han/git/python_apple/dataset/training_set/A_16.jpg")
 upstate_hsv = cv2.cvtColor(upstate, cv2.COLOR_BGR2HSV)
 plt.imshow(cv2.cvtColor(upstate_hsv, cv2.COLOR_HSV2RGB))
  

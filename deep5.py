@@ -1,5 +1,3 @@
-# coding: Shift_JIS
-
 import keras
 from keras import optimizers
 from keras.preprocessing.image import ImageDataGenerator
@@ -27,9 +25,9 @@ model_name = 'cnn_model_weights.hdf5'
 img_width = 128
 img_height = 128
 
-train_imgs = 'dataset/training_set/'
-test_imgs = 'dataset/test_set/'
-save_dir = 'dataset/'
+train_imgs = '/Users/s-han/git/python_apple/dataset/training_set/'
+test_imgs = '/Users/s-han/git/python_apple/dataset/test_set/'
+save_dir = '/Users/s-han/git/python_apple/dataset/'
 
 class_label = ['class1', 'class2']
 
@@ -117,10 +115,13 @@ def train():
         class_mode='categorical')
 
     model.fit_generator(train_generator,
-                        steps_per_epoch=1000,
-                        epochs=3,
-                        validation_data=validation_generator,
-                        validation_steps=3 )
+                        steps_per_epoch=100,
+                        epochs=1)
+    # model.fit_generator(train_generator,
+    #                     steps_per_epoch=1,
+    #                     epochs=1,
+    #                     validation_data=validation_generator,
+    #                     validation_steps=1 )
 
     # Save model and weights
     if not os.path.isdir(save_dir):
@@ -243,7 +244,7 @@ def check():
     model_path = os.path.join(save_dir, model_name)
     model = load_model(model_path)
     
-    test_image = image.load_img('dataset/img/cccc.jpg', target_size = (128, 128))
+    test_image = image.load_img('dataset/training_set/cccc.jpg', target_size = (128, 128))
     test_image = image.img_to_array(test_image)
     test_image = np.expand_dims(test_image, axis = 0)
     result = model.predict_classes(test_image)
@@ -261,6 +262,6 @@ def check():
     print('prediction : ===={}==== / result{} / result_num {} '.format(prediction, result, result_num.tolist()))
     
 if __name__ == '__main__':
-     #train()
-     #test()
-     check()
+     train()
+     test()
+     # check()
